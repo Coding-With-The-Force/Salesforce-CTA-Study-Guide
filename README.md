@@ -1,4 +1,4 @@
-# CTA_Study_Guide
+# CTA Study Guide
 
 <a href="https://github.com/Coding-With-The-Force/CTA_Study_Guide/wiki" target="_blank">Direct Link to Wiki Pages</a>   
 
