@@ -1,0 +1,35 @@
+/* ─── Salesforce Brand Colors ──────────────────────────────────────────────── */
+/* Primary: Salesforce Blue #00A1E0 */
+
+:root {
+  --md-primary-fg-color:        #00A1E0;
+  --md-primary-fg-color--light: #33b4e7;
+  --md-primary-fg-color--dark:  #0176d3;
+  --md-accent-fg-color:         #0176d3;
+  --md-accent-fg-color--transparent: #0176d31a;
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #00A1E0;
+  --md-primary-fg-color--light: #33b4e7;
+  --md-primary-fg-color--dark:  #0176d3;
+  --md-accent-fg-color:         #33b4e7;
+}
+
+/* ─── Navigation header ─────────────────────────────────────────────────────── */
+.md-header {
+  background-color: #00A1E0;
+}
+
+.md-tabs {
+  background-color: #0176d3;
+}
+
+/* ─── Slightly tighten up image display ─────────────────────────────────────── */
+article img {
+  max-width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin: 0.5em 0;
+}

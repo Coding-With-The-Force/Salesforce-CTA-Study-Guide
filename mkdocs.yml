@@ -1,0 +1,122 @@
+site_name: Salesforce CTA Study Guide
+site_description: Comprehensive study notes for the Salesforce Certified Technical Architect (CTA) exam.
+site_author: Matt Gerry
+site_url: https://coding-with-the-force.github.io/Salesforce-CTA-Study-Guide/
+
+repo_name: Coding-With-The-Force/Salesforce-CTA-Study-Guide
+repo_url: https://github.com/Coding-With-The-Force/Salesforce-CTA-Study-Guide
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Coding-With-The-Force/Salesforce-CTA-Study-Guide
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+
+  - Exam Overview:
+    - Exam Structure: "00)-CTA-Exam-Structure.md"
+    - The Diagrams: "01)-The-Diagrams.md"
+    - Board Presentation Tips: "18)-CTA-Board-Presentation-Tips.md"
+    - Google Slides Hotkeys: "17)-Google-Slides-Hotkey-Notes.md"
+
+  - Licensing & Org Strategy:
+    - Licenses Guide: "02)-Licenses.md"
+    - Org Strategy (Single vs Multi-Org): "03)-Org-Strategy-(Single-or-Multi-Org).md"
+    - Multi-Currency: "24)-Multi-Currency.md"
+
+  - Architecture & Governance:
+    - Project Governance (COE): "04)-Project-Governance-(COE).md"
+    - Integration Patterns: "08)-Integration-Patterns.md"
+    - Large Data Volumes: "16)-Large-Data-Volume-Notes.md"
+    - Mobile Solutions: "07)-Mobile-Solutions.md"
+    - Mulesoft Notes: "15)-Mulesoft-Notes.md"
+    - Reporting: "10)-Reporting.md"
+
+  - Security & Identity:
+    - Data Security: "05)-Data-Security.md"
+    - "OAuth Flows & IAM": "06)-OAuth-Flows-&-Identity-and-Access-Management.md"
+    - "Object, Field & Record Security": "29)-Object,-Field-&-Record-Security.md"
+    - Session Settings: "22)-Session-Settings.md"
+    - Cryptography: "09)-Cryptography.md"
+    - mTLS (Mutual TLS / 2-way SSL): "26)-Mutual-Transport-Layer-Security-(mTLS-or-2-way-SSL).md"
+    - Networking Basics: "28)-Networking-Basics-(Firewalls,-DMZ's,-Reverse-Proxies,-etc).md"
+
+  - Salesforce Clouds:
+    - Sales Cloud: "11)-Sales-Cloud.md"
+    - Service Cloud: "12)-Service-Cloud.md"
+    - CPQ Objects: "13)-CPQ-Objects.md"
+    - Field Service Lightning: "14)-Field-Service-Lightning.md"
+    - Experience Cloud Features: "31)-Experience-Cloud-Features.md"
+    - Knowledge Articles: "30)-Knowledge-Articles.md"
+    - Entitlement Management: "25)-Entitlement-Management-(Service-Cloud).md"
+    - Work Orders (without FSL): "27)-Work-Order-and-Work-Order-Items-(Without-Field-Service-Lightning!).md"
+
+  - Platform & AppExchange:
+    - Governor Limits & Best Practices: "20)-Governor-Limits-and-Suggested-Best-Practices.md"
+    - Standard Object Oddities: "21)-Standard-Objects-Oddities-(No-CRUD,-No-Quick-Action,-Can't-Be-Lookups,-Etc).md"
+    - Managed Packages: "19)-Managed-Packages-(Useful-to-the-CTA).md"
+    - Partner Relationship Management: "23)-Partner-Relationship-Management-(Indirect-Sales).md"
+    - External Services: "32)-External-Services.md"
+    - "Payment Gateways & Chargent": "33)-Payment-Gateways-&-Processors---Chargent.md"
+    - Document Management Systems: "34)-Document-Management-Systems-(DMS).md"
+    - Privacy & Consent Management: "36)-Privacy-and-Consent-Management-Options.md"
+    - Calculating Data Storage: "35)-Calculating-Data-Storage-In-Salesforce.md"
+
+  - Other:
+    - Notes for Improvement: "Notes-for-Improvement.md"

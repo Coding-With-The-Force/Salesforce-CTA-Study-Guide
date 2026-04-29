@@ -1,0 +1,8 @@
+# MkDocs build output — never commit this; GitHub Actions builds it
+site/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
