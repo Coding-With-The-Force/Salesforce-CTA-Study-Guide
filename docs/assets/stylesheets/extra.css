@@ -1,7 +1,18 @@
-/* ─── Salesforce Brand Colors (dark palette) ────────────────────────────────── */
-/* Primary: #0176d3  |  Header: #014d86  |  Tabs: #003d6e                        */
+/* ─── Salesforce Brand Colors ────────────────────────────────────────────────
+   Header:  #014d86   Tab bar: #003d6e   Links/accents: #0176d3
+   Applied to both light (default) and dark (slate) schemes.
+   ─────────────────────────────────────────────────────────────────────────── */
 
-:root,
+/* Light mode */
+:root {
+  --md-primary-fg-color:        #0176d3;
+  --md-primary-fg-color--light: #2196c4;
+  --md-primary-fg-color--dark:  #014486;
+  --md-accent-fg-color:         #0176d3;
+  --md-accent-fg-color--transparent: #0176d31a;
+}
+
+/* Dark mode */
 [data-md-color-scheme="slate"] {
   --md-primary-fg-color:        #0176d3;
   --md-primary-fg-color--light: #2196c4;
@@ -10,19 +21,27 @@
   --md-accent-fg-color--transparent: #33b4e71a;
 }
 
-/* ─── Navigation header ─────────────────────────────────────────────────────── */
+/* ─── Navigation header (both modes) ────────────────────────────────────────── */
 .md-header {
-  background-color: #014d86;
+  background-color: #014d86 !important;
 }
 
 .md-tabs {
-  background-color: #003d6e;
+  background-color: #003d6e !important;
 }
 
-/* ─── Slightly tighten up image display ─────────────────────────────────────── */
+/* Ensure header text/icons stay white in light mode */
+.md-header,
+.md-header .md-header__topic,
+.md-header .md-search__input::placeholder,
+.md-tabs__link {
+  color: #ffffff;
+}
+
+/* ─── Image display ──────────────────────────────────────────────────────────── */
 article img {
   max-width: 100%;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   margin: 0.5em 0;
 }
