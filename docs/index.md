@@ -18,14 +18,12 @@ When studying for this exam you are going to need ALL the help you can get to be
 
 If you get extremely serious about studying for and passing this exam and you do not work at a company that has their own CTA Coaching program you can take advantage of, it is in your best interest to find an existing CTA to at least do a few practice mocks with. If my company didn't have an internal CTA coaching course where I got to do mocks with many existing Salesforce CTA's, I'm not sure I could've passed this exam. I am trying to do my best to lower costs and the barrier of entry for this exam, and I do offer coaching myself at less than half the price of any other CTA Coach in existence at this moment in time. If you are interested in CTA coaching, you can schedule time with me or join one of my classes (if there are seats open) at the links below:   
 
-* [Schedule 1-on-1 CTA Coaching Time with me here](https://codingwiththeforce.com/cta-1-on-1-coaching/)   
-* [Sign up for the CTA Coaching Class with me here](https://www.paypal.com/ncp/payment/8B7SKNP4SYGEG)
+* [Schedule 1-on-1 CTA Coaching Time with me here](https://codingwiththeforce.com/cta-1-on-1-coaching/) - If you'd like to just setup time for you and I to discuss any questions you have about the Salesforce CTA Exam, how to prepare for it, etc, you can schedule some time here.   
 
-_**DISCLAIMER:**_ While this study guide hopes to simplify and make studying and preparing for the exam easier and less challenging to figure out, I do not believe it is possible to pass this exam with this wiki alone. You need to practice presenting, as well as practivce judging, many CTA scenarios, which will require the assistance of many other people. In a perfect world you'll want to form a study group of 3-4 people to study this content with, but more specifically to solve and run CTA scenarios together, solving scenarios together will be more valuable than anything else.    
+* [Schedule a Mock CTA Review Board Session with me](https://calendly.com/codingwiththeforce/cta-course-mock-exam-scheduling-clone) - This allows you to setup a 3 hour block of time with me for you to present your a mock CTA exam solution to you, have me do a Q&A with you, and then have ~1.5 hours of feedback about areas you could improve, how to best prepare for the exam based on your knowledge level, etc. 
 
-You NEED other very strong experienced architects in your group, not just your friends or close work colleagues. The people in your group must challenge you and be ok with you challenging them in the QA portion of every scenario you solve. Their alternative perspectives will help you hone and improve your own skills.    
+* [Sign up for the CTA Coaching Class with me here](https://www.paypal.com/ncp/payment/8B7SKNP4SYGEG) - If you'd like to sign up for my individually personalized CTA Course that provides detailed study materials, tons of dedicated 1-on-1 time with me, as well a discord server to talk to both myself and the other students in the class any time you want, this is the link for you!   
 
-Ideally you should also have an existing CTA coach you if possible as it will definitely increase your chances of being prepared and passing. I of course offer these services at a lower cost than anyone else in existence as of today, but you can also find other CTA's willing to coach you within the Architect Trailblazers Group, Architect Ohana Slack Channel, the Flowrepublic Coaching course, or within most large consulting firms you are likely to have an internal CTA training program you can join.   
 
 ***
 
@@ -103,4 +101,14 @@ Ideally you should also have an existing CTA coach you if possible as it will de
 
 35) [Calculating Data Storage In Salesforce](<35)-Calculating-Data-Storage-In-Salesforce.md>)
 
-36) [Privacy and Consent Management Options](<36)-Privacy-and-Consent-Management-Options.md>)
+36) [Privacy and Consent Management Options](<36)-Privacy-and-Consent-Management-Options.md>)   
+
+<br/>
+
+___
+
+_**DISCLAIMER:**_ While this study guide hopes to simplify and make studying and preparing for the exam easier and less challenging to figure out, I do not believe it is possible to pass this exam with this wiki alone. You need to practice presenting, as well as practivce judging, many CTA scenarios, which will require the assistance of many other people. In a perfect world you'll want to form a study group of 3-4 people to study this content with, but more specifically to solve and run CTA scenarios together, solving scenarios together will be more valuable than anything else.    
+
+You NEED other very strong experienced architects in your group, not just your friends or close work colleagues. The people in your group must challenge you and be ok with you challenging them in the QA portion of every scenario you solve. Their alternative perspectives will help you hone and improve your own skills.    
+
+Ideally you should also have an existing CTA coach you if possible as it will definitely increase your chances of being prepared and passing. I of course offer these services at a lower cost than anyone else in existence as of today, but you can also find other CTA's willing to coach you within the Architect Trailblazers Group, Architect Ohana Slack Channel, the Flowrepublic Coaching course, or within most large consulting firms you are likely to have an internal CTA training program you can join.   
