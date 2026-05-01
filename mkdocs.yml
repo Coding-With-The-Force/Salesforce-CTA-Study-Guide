@@ -1,5 +1,5 @@
 site_name: Salesforce CTA Study Guide
-site_description: Comprehensive study notes for the Salesforce Certified Technical Architect (CTA) exam.
+site_description: The Complete Guide to the Salesforce Certified Technical Architect (CTA) exam.
 site_author: Matt Gerry
 site_url: https://coding-with-the-force.github.io/Salesforce-CTA-Study-Guide/
 
@@ -33,6 +33,7 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
     - search.share
@@ -47,7 +48,13 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Coding-With-The-Force/Salesforce-CTA-Study-Guide
+      link: https://github.com/Coding-With-The-Force/Salesforce-Separation-Of-Concerns-And-The-Apex-Common-Library
+      name: View on GitHub
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@CodingWithTheForce
+      name: YouTube Channel
+
+copyright: "Made with 🦖 by <a href='https://github.com/Coding-With-The-Force'>Coding With The Force</a> &nbsp;|&nbsp; <a href='https://www.paypal.com/donate?business=RNHEF8ZWKKLDG&currency_code=USD'>Buy me some Taco Bell? 🌮</a>"
 
 markdown_extensions:
   - admonition
