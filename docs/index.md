@@ -1,6 +1,6 @@
-### Welcome to The Complete Guide to The Salesforce CTA Review Board
+### Welcome to The Unoffical Complete Guide to The Salesforce CTA Review Board
 
-This guide houses all my notes for the Salesforce Certified Technical Architect Review Board (or the CTA Exam for short), my personal suggestions on the best way to approach solutioning and presenting your scenario, as well as practice scenarios that are publicly available ranked in order of likeness to what you will experience during the day of your review board. Additionally this guide provides example diagrams, suggestions on what and how to study, and much more.    
+This unoffical guide houses all my notes for the Salesforce Certified Technical Architect Review Board (or the CTA Exam for short), my personal suggestions on the best way to approach solutioning and presenting your scenario, as well as practice scenarios that are publicly available ranked in order of likeness to what you will experience during the day of your review board. Additionally this guide provides example diagrams, suggestions on what and how to study, and much more. It took me forever to accumulate all of this knowledge to prep and pass the Salesforce CTA exam, so I wanted to provide this as a resource to everyone out there to hopefully make studying for this thing at least a little bit easier.       
 
 When studying for this exam you are going to need ALL the help you can get to be able to successfully pass it. Below is a list of free resources to help you get started down the path of becoming a CTA:   
 
@@ -111,4 +111,8 @@ _**DISCLAIMER:**_ While this study guide hopes to simplify and make studying and
 
 You NEED other very strong experienced architects in your group, not just your friends or close work colleagues. The people in your group must challenge you and be ok with you challenging them in the QA portion of every scenario you solve. Their alternative perspectives will help you hone and improve your own skills.    
 
-Ideally you should also have an existing CTA coach you if possible as it will definitely increase your chances of being prepared and passing. I of course offer these services at a lower cost than anyone else in existence as of today, but you can also find other CTA's willing to coach you within the Architect Trailblazers Group, Architect Ohana Slack Channel, the Flowrepublic Coaching course, or within most large consulting firms you are likely to have an internal CTA training program you can join.   
+Ideally you should also have an existing CTA coach you if possible as it will definitely increase your chances of being prepared and passing. I of course offer these services at a lower cost than anyone else in existence as of today, but you can also find other CTA's willing to coach you within the Architect Trailblazers Group, Architect Ohana Slack Channel, the Flowrepublic Coaching course, or within most large consulting firms you are likely to have an internal CTA training program you can join.    
+
+Additionally, **this is NOT an official Salesforce guide**, this is just a guide I painstakingly put together after thousands of hours studying for and finally passing the CTA Exam. The exam is subject to change at any time, and as much as I would love for this guide to be 100% comprehensive and contain everything you could potentially ever see on this exam, that is basically impossible for me to do.    
+
+<br/>

@@ -1,6 +1,6 @@
 ### The Important Diagrams
 
-When presenting your solution to the CTA Board there **ABSOLUTELY NO DIAGRAMS REQUIRED!** It is not something that is a mandatory graded part of your presentation. Your are ultimately graded on your ability to solve for the requirements written in the scenario and for your dispersal of that information when you present and do the Q&A session with your judges. With that said, **I ALSO DO NOT BELIEVE IT IS POSSIBLE TO PASS WITHOUT CREATING THE 4 DIAGRAMS LISTED BELOW.**   
+When presenting your solution to the CTA Board there are **ABSOLUTELY NO DIAGRAMS REQUIRED!** It is not something that is a mandatory graded part of your presentation. Your are ultimately graded on your ability to solve for the requirements written in the scenario and for your dispersal of that information when you present and do the Q&A session with your judges. With that said, **I ALSO DO NOT BELIEVE IT IS POSSIBLE TO PASS WITHOUT CREATING THE 4 DIAGRAMS LISTED BELOW.**   
 
 Make sure however that you only use your diagrams as supporting documents to help easily visualize your solution. **DO NOT** just open your diagrams and start speaking to your diagrams out of context of the requirements. Instead, open your diagrams on the right side of your screen/monitor and your solution/google doc on the left side of your monitor. When you get to a solution within your word doc that can be visually assisted by your diagrams, pull the diagram up and explain (with the assistance of your diagram) how you are solving that solution.    
 
@@ -16,7 +16,9 @@ Here is a link to my suggested approach/template for creating diagrams via lucid
 
 This is not so much a diagram as it is just a lucid chart tab where you will type up a quick overview about the company, what it is trying to achieve with this project you are solutioning for, what org strategy you are choosing to solve the client's needs (single or multi-org) and why, what mobile strategy you are choosing to solve the client's needs and why, any major risks you have identified while solving your CTA scenario (for example a really short timeline for a huge project) and how you plan to address then, and any assumptions you are making that are important to understanding your solutioning for a scenario (for instance, assuming that their ERP system already has a payment gateway you can leverage).   
 
-**Example Company Overview and Org Strategy Tab:**
+**Example Company Overview and Org Strategy Tab:**  
+
+
 
 ---
 
