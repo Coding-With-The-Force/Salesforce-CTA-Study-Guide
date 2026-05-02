@@ -18,8 +18,8 @@ This is not so much a diagram as it is just a lucid chart tab where you will typ
 
 **Example Company Overview and Org Strategy Tab:**  
 
-<img src="assets/images/CTA_Diagrams/OverviewAndStrat.png" alt="Org Strategy" width="70%" >
-<img src="assets/images/CTA_Diagrams/RisksAndAssumps.png" alt="Risks And Assumptions" width="70%" >
+<img src="../assets/images/CTA_Diagrams/OverviewAndStrat.png" alt="Org Strategy" width="70%">
+<img src="../assets/images/CTA_Diagrams/RisksAndAssumps.png" alt="Risks And Assumptions" width="70%">
 
 ---
 
@@ -35,7 +35,7 @@ _**The purpose of this diagram is the following:**_
 
 **Example Actors and Licenses Diagram:**   
 
-<img src="assets/images/CTA_Diagrams/ActorsAndLicenses.png" alt="Actors And Licenses" width="70%" >
+<img src="../assets/images/CTA_Diagrams/ActorsAndLicenses.png" alt="Actors And Licenses" width="70%">
 
 ___
 
@@ -54,7 +54,7 @@ This Diagram is the MOST CRITICAL diagram to get right on the exam. Basically ev
 
 **Example Entity Relationship Diagram (ERD):**
 
-<img src="assets/images/CTA_Diagrams/DataModel.png" alt="ERD" width="70%" >
+<img src="../assets/images/CTA_Diagrams/DataModel.png" alt="ERD" width="70%">
 
 ***
 
@@ -82,7 +82,7 @@ The system landscape diagram will help you illustrate the different systems incl
 
 **Example System Landscape Diagram:**   
 
-<img src="assets/images/CTA_Diagrams/SystemDiagram.png" alt="System Landscape" width="70%" >
+<img src="../assets/images/CTA_Diagrams/SystemDiagram.png" alt="System Landscape" width="70%">
 
 ***
 
@@ -104,7 +104,7 @@ A reminder that I would not waste time on this diagram unless you have solved ev
 
 **Example Role Hierarchy Diagram:**   
 
-<img src="assets/images/CTA_Diagrams/RoleHierarchy.png" alt="Role Hierarchy" width="70%" >
+<img src="../assets/images/CTA_Diagrams/RoleHierarchy.png" alt="Role Hierarchy" width="70%">
 
 ***
 
@@ -126,4 +126,4 @@ The environment diagram will help to illustrate your approach to the different S
 
 **Example Environment Diagram:**     
 
-<img src="assets/images/CTA_Diagrams/Environment.png" alt="Environment Diagram" width="70%" >
+<img src="../assets/images/CTA_Diagrams/Environment.png" alt="Environment Diagram" width="70%">
