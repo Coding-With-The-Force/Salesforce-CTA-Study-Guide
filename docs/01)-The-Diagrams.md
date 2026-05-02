@@ -18,7 +18,8 @@ This is not so much a diagram as it is just a lucid chart tab where you will typ
 
 **Example Company Overview and Org Strategy Tab:**  
 
-
+<img src="assets/images/CTA_Diagrams/OverviewAndStrat.png" alt="Org Strategy" width="70%" >
+<img src="assets/images/CTA_Diagrams/RisksAndAssumps.png" alt="Risks And Assumptions" width="70%" >
 
 ---
 
@@ -32,7 +33,9 @@ _**The purpose of this diagram is the following:**_
 
 **IMPORTANT NOTE:** For your CTA scenario you should not try to cut costs with the basic licenses (Sales, Service, Platform, and Experience Cloud licenses), you should just assume you have infinite money and use the license that will enable you to build the solution in its simplest form. For instance, if your Sales Reps only need a Sales Cloud license because they need access to the Opportunity object and not for anything else ABSOLUTELY DO NOT suggest a lower cost setup where you would replace the Opportunity object with a custom object so that you could give Sales Reps platform licenses instead... That is a recipe for disaster.    
 
-**Example Actors and Licenses Diagram:**
+**Example Actors and Licenses Diagram:**   
+
+<img src="assets/images/CTA_Diagrams/ActorsAndLicenses.png" alt="Actors And Licenses" width="70%" >
 
 ___
 
@@ -50,6 +53,8 @@ This Diagram is the MOST CRITICAL diagram to get right on the exam. Basically ev
 * An easy way to visualize which user personas will be the owners of the records for each object. Knowing who the owners of each records are is important to understanding whether your proposed security architecture will work. You could denote this on your objects in the following way "O: Sales Rep" as a shorthand for "Owner: Sales Rep".        
 
 **Example Entity Relationship Diagram (ERD):**
+
+<img src="assets/images/CTA_Diagrams/DataModel.png" alt="ERD" width="70%" >
 
 ***
 
@@ -75,7 +80,9 @@ The system landscape diagram will help you illustrate the different systems incl
 
 * A way to easily identify each authorization flow you are using for each system integration you are proposing. For instance, are you using JWT or OAuth to connect to your ERP system (if your scenario has one). You can easily show this by putting the flow name next to the line that indicates an integration between two systems.    
 
-**Example System Landscape Diagram:**
+**Example System Landscape Diagram:**   
+
+<img src="assets/images/CTA_Diagrams/SystemDiagram.png" alt="System Landscape" width="70%" >
 
 ***
 
@@ -95,7 +102,9 @@ The role hierarchy diagram will help you to explain the roles your users will ha
 
 A reminder that I would not waste time on this diagram unless you have solved every requirement and have the time to come back and make this to support your solution.    
 
-**Example Role Hierarchy Diagram:**
+**Example Role Hierarchy Diagram:**   
+
+<img src="assets/images/CTA_Diagrams/RoleHierarchy.png" alt="Role Hierarchy" width="70%" >
 
 ***
 
@@ -115,5 +124,6 @@ The environment diagram will help to illustrate your approach to the different S
 * What will be deployed to each environment and when that would take place in the software development lifecycle (SDLC)           
 * Include any external applications you are planning to use to get your environment pipeline up and running (ex: github, jenkins, flosum, copado, etc)
 
-**Example Environment Diagram:**   
-     
+**Example Environment Diagram:**     
+
+<img src="assets/images/CTA_Diagrams/Environment.png" alt="Environment Diagram" width="70%" >
