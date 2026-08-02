@@ -4,6 +4,14 @@ The goal of project governance, and the creation of a COE is to establish, maint
 
 ***
 
+### How to weave this into your CTA Scenario
+
+You should not just generically mention these roles, the roles you mention should be directly linked to requirements you read throughout your scenario. Generic suggestions for COE members will not get you any points. So if you get a scenario requirement that says something like, "The experience cloud site should be available in English, French, and Spanish" you should weave in your COE's "translation team" for your solution. **An example response would be something along the lines of**, "We would use translation workbench as well as experience cloud site translations and work with our COE's translation team to ensure the translations were accurate and appropriately vetted" or something like that.   
+
+You should essentially be thinking about if a COE membership should be involved/consulted for each requirement and weave them in wherever they are relevant. 
+
+***
+
 ### What is a COE?
 
 A COE is essentially a body of individuals who manage the governance and operations for a Salesforce Org (or IT initiatives company wide). At a larger business you will likely have multiple COE's, but there will be two major types of COE's:
@@ -21,6 +29,13 @@ A COE is essentially a body of individuals who manage the governance and operati
 **ROAM** - Resolve, Own, Accept, Mitigate. This is a risk management acronym/matric. When a risk is identified it is placed into one of those four categories by the COE.   
 
 **RACI** - Responsible, Accountable, Consulted, and Informed. This is a responsibilities matrix whose goal is to bring structure and clarity to the roles that each stakeholder plays in a project.
+
+**CAB (Change Advisory Board)** - The ITIL-standard term that's effectively synonymous with your existing Change Control Board; worth noting since the exam/scenarios may use either term interchangeably.   
+
+**DACI (Driver, Approver, Contributor, Informed)** - An alternative to RACI you'll sometimes see cited as a lighter-weight decision-making matrix.   
+
+***
+
 
 ### Common COE Roles  
 
@@ -46,6 +61,6 @@ When sitting for the CTA Board you need to make a decision on who to add to your
 
 **Translations Team** - Team is in charge of ensuring any/all translation work required follows the same quality control guidelines.
 
-**Data Steward** -   
+**Data Steward** - A business-aligned role accountable for the quality, definition, and appropriate use of a specific data domain (Accounts, Products, etc). Defines data standards, business rules, and data quality metrics, and works with IT to get them enforced. Owns the "what" and "why" of the data, not where or how it's physically stored.
 
-**Data Custodian** -
+**Data Custodian** - A technical/IT-aligned role responsible for the safe day-to-day storage, security, and technical management of data (backups, access controls, encryption, retention enforcement). Implements the policies that Data Stewards (and, at a higher level, Data Owners) define. Owns the "how" of managing the data infrastructure, not its business meaning.
