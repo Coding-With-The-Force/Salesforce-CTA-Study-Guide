@@ -1,8 +1,12 @@
 ### The Importance of Org Strategy  
 
-Not only is this important in practice, but if you get this wrong on your CTA exam there is often little you can do to recover from it. If you have to switch the org strategy during your QA session it is often impossible to right that wrong as too many pieces come falling down in your data model and system architecture strategies. You need to be very sure about your org strategy before proceeding with anything else in your scenario.   
+In practice this is incredibly important to understand and get right. Making sure you understand when and why you would choose a single or multi-org is incredibly important when making a decision for the business you are working on behalf of, however, on the exam it is extremely unlikely you will be given a multi-org scenario. There are no practice exams that feature multi-org scenarios, and frankly I think they would be far too complex to solve for in a 3 hour sitting (the length of this exam), so I highly doubt you will see them for the exam. That said, you STILL MUST KNOW HOW TO JUSTIFTY YOUR SINGLE OR MULTI ORG DECISION and you need to discuss why you chose a single org approach for your solution! If you do not you will miss critical points that may cost you the exam. 
 
-In most scenarios you will likely have a single org scenario, but definitely not all. Start with a single org approach and adjust when you find something in the requirements that would force you into a multi-org situation.
+***
+
+### What To Present on Your CTA Board for Org Strategy   
+
+While technically optional, on the CTA board I would strongly suggest you to have a lucid chart tab that covers both a brief overview of your CTA scenario as well as your proposed org strategy and why you chose it. It should list all of the reasons with supporting information from the scenario as to why you believe your proposed org strategy is right for the customer. (This is also covered/discussed in the "01)-The-Diagrams" section of this guide).   
 
 ***
 
@@ -19,21 +23,21 @@ Pros:
 * Sharing is much easier to manage  
 * Users would only need one SF license and only one set of login credentials  
 * Integrations are easier to maintain/deal with if we only have one org  
-* Easier to build a more robust view of the custom (360)  
+* Easier to build a more robust view of the customer (360)  
 
 Cons:  
 
 * Different regulations for different countries may make this difficult in a multi country SF org  
-* The single org can get complex fast with many business units in it  
-* You are more likely to potentially hit governor limits  
+* The single org can get complex with many business units in it  
+* There is a potential for larger orgs to potentially hit governor limits  
 * If you do not design your code/config carefully delivery time for new stories could start to slow down.  
-* Different teams could end up breaking each others functionalities without proper oversight  
+* Different teams could end up breaking each others functionalities without proper oversight and a good environment setup/ ci/cd setup.    
 
 ***
 
 ### Multi-Org Considerations  
 
-Below is a list of multi-org pros and cons.
+Below is a list of multi-org pros and cons (This is not comprehensive, but lists some of the major considerations that would be valuable to research and touch on in an exam scenario, and consider in a real life scenario).
 
 Pros:  
 
