@@ -184,6 +184,8 @@ _Steps for the Refresh Token Flow (more detail on page 133 of the Becoming a CTA
 
 This flow is less secure than the web server flow and is primarily used for client apps that are unable to provide secure storage for the client secret value. Javascript single page apps and mobile applications are good examples of when this flow is often used.  
 
+**This flow has been deprecated in favor of the PKCE Flow described in the next section below.** The User Agent (Implicit) Flow returns the access token directly in the browser's URL fragment at the end of the redirect, with no back-channel exchange and no way to authenticate the client app at all. That means the token can leak through browser history, referrer headers, proxy/server logs, or a malicious browser extension, and there's nothing tying the token to the specific app instance that requested it. Salesforce Mobile SDK 11.0+ now defaults to the Web Server Flow with PKCE instead of the User Agent Flow for exactly this reason: PKCE keeps the actual token exchange in a back-channel POST request (like the Web Server Flow) while still working for public clients that can't store a client secret, by having the client prove it holds a one-time secret it generated for that specific request. Salesforce still supports the User Agent Flow for backwards compatibility, but you should not recommend it in a CTA scenario when PKCE is available.
+
 _Steps for the User Agent Flow (more detail on page 134 of the Becoming a CTA Book):_
 
 1) The user starts the application.  
@@ -202,6 +204,51 @@ _Steps for the User Agent Flow (more detail on page 134 of the Becoming a CTA Bo
 
 ---
 
+**_PKCE Flow (Proof Key for Code Exchange)_** -
+
+PKCE (pronounced "pixy") is an extension to the Web Server (Authorization Code) Flow built for "public" clients that can't securely store a client secret, like single page apps (SPAs) and native mobile apps. Instead of a client secret (Web Server Flow) or no client authentication at all (User Agent Flow), PKCE has the client generate a one-time secret for each individual authorization request (the code_verifier) and prove it holds that secret when it redeems the authorization code for an access token. This binds the authorization code to the specific app instance that requested it, so even if the code is intercepted in transit, an attacker can't redeem it without the matching code_verifier. Salesforce only supports the S256 (SHA-256) challenge method, not the weaker "plain" method.
+
+**When it's most commonly used:** Single-page JavaScript apps, native mobile apps, CLI/desktop apps, and any other public client that can't safely store a client secret but still needs the security of an authorization-code-style exchange. This is Salesforce's recommended replacement for the User Agent/Implicit Flow (see above), and is the default flow used by Salesforce Mobile SDK 11.0+.
+
+_Steps for the PKCE Flow:_
+
+1) The client app generates a random string called the code_verifier.  
+2) The client app hashes the code_verifier with SHA-256 and Base64URL-encodes it to create the code_challenge.  
+3) The client app redirects the user's browser to the authorization endpoint, same as the Web Server Flow, but adds the code_challenge and code_challenge_method=S256 parameters to the request.  
+4) The auth server checks for an existing valid session cookie. If none exists, the user is shown a login screen, then a screen to approve the requested scopes.  
+5) Once the user approves, the auth server generates an authorization code and stores it along with the code_challenge submitted in step 3.  
+6) The authorization code is returned to the client app via the browser redirect to the redirect_uri.  
+7) The client app sends the authorization code back to the token endpoint, along with the original (un-hashed) code_verifier, instead of a client secret.  
+8) The auth server hashes the received code_verifier the same way (SHA-256 + Base64URL) and compares it to the code_challenge it stored in step 5. A match proves the request came from the same app instance that started the flow.  
+9) The auth server issues an access token (and potentially a refresh and ID token) to the client app.  
+10) The client app uses the access token to request the resource from the resource server.  
+11) The resource server returns the requested resource.
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Client as Client App (Public Client)
+    participant Auth as Authorization Server
+    participant Res as Resource Server
+
+    Client->>Client: Generate code_verifier, then derive code_challenge (SHA-256 / Base64URL)
+    User->>Client: Starts app / requests protected resource
+    Client->>Auth: Authorization request (client_id, redirect_uri, scope, code_challenge, code_challenge_method=S256)
+    Auth->>User: Login page (if no valid session)
+    User->>Auth: Enters credentials, approves scopes
+    Auth->>Auth: Store authorization code + code_challenge
+    Auth-->>Client: Redirect with authorization code
+    Client->>Auth: POST authorization code + code_verifier (token endpoint)
+    Auth->>Auth: Hash code_verifier, compare to stored code_challenge
+    Auth-->>Client: Access Token (+ Refresh/ID Token)
+    Client->>Res: Request resource with Access Token
+    Res-->>Client: Return requested resource
+```
+
+More info: [Enabling PKCE for OAuth for Salesforce Connected/External Client Apps](https://help.salesforce.com/s/articleView?id=005316703&language=en_US&type=1)
+
+---
+
 **_JWT Bearer Flow_** - The JWT flow is most often used when you want to authorize a client app to a resource server without requiring the user to login. The digital signature in the JWT token will be used to authenticate the client app to the resource server. Since there it is not required the user actually login with this flow, the user will have needed to authorize this app by logging in at a different stage in the client app or be authorized by an admin to be able to execute this flow. A good example of admin authorized users for authentication flows in SF is when you setup a connected app, there is a setting you can adjust called "Admin approved users are pre-authorized". The users filled out in that section of the connected app are "admin authorized users" that can run the authentication flow. This flow is often used for automated background processes, scheduled jobs, etc.
 
 _Steps for the JWT Bearer Flow (more detail on page 137 of the Becoming a CTA Book):_  
@@ -217,12 +264,77 @@ _Steps for the JWT Bearer Flow (more detail on page 137 of the Becoming a CTA Bo
 
 ---
 
-**_The Device Flow_** - The device flow is normally used for devices that have limited input and display capabilities like TV's and appliances.
+**_The Device Flow_** - The device flow is normally used for devices that have limited input and display capabilities like TV's and appliances. Since the device itself can't easily display a login form or accept a typed password, the user instead authenticates on a second, more capable device (a phone or laptop) while the original device polls in the background until that approval completes.
 
+_Steps for the Device Flow:_
 
-**_The Asset Token Flow_** - This flow is normally used for IoT (Internet of Things) devices
+1) The device app (or an app running on a device with limited input) sends an authorization request to the authorization server, passing its client_id.  
+2) The auth server returns a device_code, a short human-readable user_code, a verification_uri, and a minimum polling interval.  
+3) The device displays the user_code and verification_uri to the user (for example, "Go to salesforce.com/device and enter code ABCD-1234").  
+4) The device app begins polling the token endpoint with the device_code at the interval it was given, waiting for the user to complete steps 5-6.  
+5) The user, on a separate device with a full browser, navigates to the verification_uri and enters the user_code.  
+6) The auth server presents a login screen (if there's no valid session) and, after login, a screen asking the user to approve the device app's requested scopes.  
+7) Once the user approves, the device app's next poll to the token endpoint returns an access token (and potentially a refresh token).  
+8) The device app uses the access token to request the resource from the resource server.  
+9) The resource server returns the requested resource.
 
+```mermaid
+sequenceDiagram
+    actor User
+    participant Device as Device App (limited input)
+    participant Auth as Authorization Server
+    participant Res as Resource Server
 
-**_The Username-Password Flow_** -    
+    Device->>Auth: Device authorization request (client_id)
+    Auth-->>Device: device_code, user_code, verification_uri, polling interval
+    Device->>User: Display user_code + verification_uri
+    loop Poll until approved
+        Device->>Auth: Poll token endpoint with device_code
+    end
+    User->>Auth: Visits verification_uri on a separate device
+    Auth->>User: Login page (if no valid session)
+    User->>Auth: Enters credentials, enters user_code, approves scopes
+    Auth-->>Device: Next poll returns Access Token (+ Refresh Token)
+    Device->>Res: Request resource with Access Token
+    Res-->>Device: Return requested resource
+```
+
+More info: [OAuth 2.0 Device Flow for IoT Integration](https://help.salesforce.com/s/articleView?id=xcloud.remoteaccess_oauth_device_flow_ca.htm&language=en_US&type=5)
+
+---
+
+**_The Asset Token Flow_** - This flow is normally used for IoT (Internet of Things) devices. Unlike the other flows above, it isn't how a client app first gets access to Salesforce, it's a follow-on token exchange that links a specific physical device to a Salesforce Asset record (and, through that, an Account/Contact) and hands the device a self-verifying token it can use going forward without round-tripping back to Salesforce for every single check.
+
+_Steps for the Asset Token Flow:_
+
+1) The device (or its gateway/client app) first obtains a normal OAuth access token from Salesforce using another flow, most often the JWT Bearer Flow, since this is typically an unattended background process.  
+2) The client app builds an Actor Token, a JSON payload describing the specific physical device (its unique device/serial identifier, plus which Account/Contact/Asset it should be linked to).  
+3) The client app sends a request to Salesforce's asset token endpoint, including both the access token from step 1 and the actor token from step 2.  
+4) Salesforce validates both tokens, then creates or updates an Asset record representing that specific device, linked to the appropriate Account/Contact.  
+5) Salesforce issues an Asset Token back to the client, a signed, self-describing JWT tied to that specific Asset record.  
+6) The device stores the asset token and includes it on subsequent requests to identify itself as that specific asset, without needing to repeat a full OAuth handshake each time.  
+7) Because the asset token is a self-describing, signed JWT, the receiving system can verify it independently (using Salesforce's public key/cert) without calling back to Salesforce for every request.
+
+```mermaid
+sequenceDiagram
+    participant Device as Connected Device / IoT Client App
+    participant Auth as Salesforce Authorization Server
+    participant Asset as Salesforce Asset Record
+
+    Device->>Auth: Obtain Access Token via another OAuth flow (e.g. JWT Bearer Flow)
+    Auth-->>Device: Access Token
+    Device->>Device: Build Actor Token (device/serial ID + linked Account/Contact info)
+    Device->>Auth: Request Asset Token (Access Token + Actor Token)
+    Auth->>Asset: Create or update Asset record linked to Account/Contact
+    Auth-->>Device: Signed, self-describing Asset Token (JWT)
+    Device->>Device: Store Asset Token for subsequent requests
+    Note over Device: Asset Token can be verified independently (self-describing JWT) without round-tripping back to Salesforce each time.
+```
+
+More info: [OAuth 2.0 Asset Token Flow for Securing Connected Devices](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_asset_token_flow.htm&language=en_US&type=5)
+
+---
+
+**_The Username-Password Flow_** - Please don't suggest this. You will fail your exam, and eventually be terminated from your current job if you suggest this flow.   
 
 
