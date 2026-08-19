@@ -1,0 +1,443 @@
+/**
+ * The Salesforce CTA Exam Guide — "Schematic on the Pad" theme.
+ * Light mode: green engineer's graph paper (design-mockups/21-merge-schematic-on-pad-home.html).
+ * Dark mode: "Night Bench" phosphor-on-black (design-mockups/23-merge-night-bench-home.html).
+ */
+
+:root {
+  /* Pad palette */
+  --pad-ink-strong: #1c3f2a;
+  --pad-ink: #2c5f3f;
+  --pad-text: #22392b;
+  --pad-text-soft: #43604f;
+  --pad-text-faint: #6b8577;
+  --pad-rule: #9db8a6;
+  --pad-paper: #f2f5ee;
+  --pad-card: #ffffff;
+  --pad-card-tint: #e8f0e6;
+  --pad-grid-line: rgba(44, 95, 63, 0.1);
+  --pad-shadow: 4px 4px 0 rgba(44, 95, 63, 0.25);
+  --schematic-ink: #2c5f3f;
+  --schematic-ink-strong: #1c3f2a;
+  --schematic-label: #6b8577;
+  --schematic-fill: rgba(44, 95, 63, 0.08);
+  --schematic-fill-hot: rgba(44, 95, 63, 0.1);
+
+  /* Infima overrides */
+  --ifm-color-primary: #2c5f3f;
+  --ifm-color-primary-dark: #285639;
+  --ifm-color-primary-darker: #255136;
+  --ifm-color-primary-darkest: #1c3f2a;
+  --ifm-color-primary-light: #316846;
+  --ifm-color-primary-lighter: #346e4a;
+  --ifm-color-primary-lightest: #3d8055;
+  --ifm-color-content: var(--pad-text);
+  --ifm-heading-color: var(--pad-ink-strong);
+  --ifm-background-color: var(--pad-paper);
+  --ifm-background-surface-color: var(--pad-paper);
+  --ifm-font-family-base: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --ifm-font-family-monospace: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  --ifm-code-font-size: 90%;
+  --ifm-link-color: var(--pad-ink);
+  --ifm-link-hover-color: var(--pad-ink-strong);
+  --ifm-navbar-background-color: #f2f5ee;
+  --ifm-navbar-height: 4rem;
+  --ifm-navbar-item-padding-horizontal: 0.8rem;
+  --ifm-footer-background-color: #e8f0e6;
+  --ifm-footer-color: var(--pad-text);
+  --ifm-footer-link-color: #2c5f3f;
+  --ifm-footer-link-hover-color: #1c3f2a;
+  --ifm-footer-title-color: #1c3f2a;
+  --ifm-toc-border-color: var(--pad-rule);
+  --ifm-table-border-color: var(--pad-rule);
+  --ifm-table-head-background: var(--pad-card-tint);
+  --ifm-table-stripe-background: rgba(232, 240, 230, 0.5);
+  --ifm-blockquote-border-left-width: 3px;
+  --ifm-blockquote-border-color: var(--pad-ink);
+  --ifm-hr-background-color: var(--pad-rule);
+  --ifm-breadcrumb-item-background-active: var(--pad-card-tint);
+  --ifm-menu-color: var(--pad-text-soft);
+  --ifm-menu-color-active: var(--pad-ink-strong);
+  --ifm-menu-color-background-active: var(--pad-card-tint);
+  --ifm-menu-color-background-hover: rgba(232, 240, 230, 0.7);
+  --docusaurus-highlighted-code-line-bg: rgba(44, 95, 63, 0.12);
+}
+
+[data-theme='dark'] {
+  /* Night Bench palette */
+  --pad-ink-strong: #ffffff;
+  --pad-ink: #5fdc8f;
+  --pad-text: #d8efe0;
+  --pad-text-soft: #9dc4ab;
+  --pad-text-faint: #6da583;
+  --pad-rule: rgba(95, 220, 143, 0.4);
+  --pad-paper: #0e1c14;
+  --pad-card: #12251a;
+  --pad-card-tint: rgba(95, 220, 143, 0.08);
+  --pad-grid-line: rgba(95, 220, 143, 0.06);
+  --pad-shadow: 0 0 22px rgba(95, 220, 143, 0.14);
+  --schematic-ink: #5fdc8f;
+  --schematic-ink-strong: #ffffff;
+  --schematic-label: #6da583;
+  --schematic-fill: rgba(95, 220, 143, 0.08);
+  --schematic-fill-hot: rgba(95, 220, 143, 0.1);
+
+  --ifm-color-primary: #5fdc8f;
+  --ifm-color-primary-dark: #45d67e;
+  --ifm-color-primary-darker: #38d375;
+  --ifm-color-primary-darkest: #26b25e;
+  --ifm-color-primary-light: #79e2a0;
+  --ifm-color-primary-lighter: #86e5a9;
+  --ifm-color-primary-lightest: #a5f2c4;
+  --ifm-color-content: var(--pad-text);
+  --ifm-heading-color: var(--pad-ink-strong);
+  --ifm-background-color: var(--pad-paper);
+  --ifm-background-surface-color: #0e1c14;
+  --ifm-link-color: var(--pad-ink);
+  --ifm-link-hover-color: #a5f2c4;
+  --ifm-navbar-background-color: #0e1c14;
+  --ifm-footer-background-color: #12251a;
+  --ifm-footer-color: #9dc4ab;
+  --ifm-footer-link-color: #a5f2c4;
+  --ifm-footer-link-hover-color: #d8efe0;
+  --ifm-footer-title-color: #d8efe0;
+  --ifm-toc-border-color: var(--pad-rule);
+  --ifm-table-border-color: var(--pad-rule);
+  --ifm-table-head-background: rgba(95, 220, 143, 0.08);
+  --ifm-table-stripe-background: rgba(95, 220, 143, 0.03);
+  --ifm-menu-color: var(--pad-text-soft);
+  --ifm-menu-color-active: var(--pad-ink);
+  --ifm-menu-color-background-active: var(--pad-card-tint);
+  --ifm-menu-color-background-hover: rgba(95, 220, 143, 0.06);
+  --docusaurus-highlighted-code-line-bg: rgba(95, 220, 143, 0.1);
+}
+
+/* ── The graph paper ─────────────────────────────────────────────────── */
+html body {
+  background-image: repeating-linear-gradient(
+      0deg,
+      var(--pad-grid-line) 0,
+      var(--pad-grid-line) 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--pad-grid-line) 0,
+      var(--pad-grid-line) 1px,
+      transparent 1px,
+      transparent 16px
+    );
+  background-attachment: fixed;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────────────── */
+/* NOTE: no backdrop-filter here — Docusaurus renders the mobile slide-out
+   menu (.navbar-sidebar, position: fixed) inside .navbar, and a filter on
+   the navbar would become its containing block, clipping the menu. */
+.navbar {
+  border-bottom: 2px solid var(--pad-ink);
+  box-shadow: none;
+}
+
+/* Mobile slide-out menu: solid pad paper. NOTE: never set overflow on
+   .navbar-sidebar__items — Docusaurus slides that wrapper horizontally to
+   switch between the main menu and the per-page docs menu, and a scroll
+   container there breaks the slide (blank menu on doc pages). Each panel
+   inside it already scrolls on its own. */
+.navbar-sidebar {
+  background: var(--pad-paper);
+}
+
+.navbar__title {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--pad-ink-strong);
+}
+
+.navbar__link {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--pad-text-soft);
+  white-space: nowrap;
+}
+
+.navbar__link--active,
+.navbar__link:hover {
+  color: var(--pad-ink);
+}
+
+/* The 8 category dropdowns only fit a single row on wide screens, so the
+   hamburger menu takes over below 1500px instead of Docusaurus's default
+   996px. Keep these breakpoints in sync with HAMBURGER_BELOW_PX in
+   src/theme/Navbar/MobileSidebar/index.tsx (the swizzled component that
+   lets the slide-out menu render above 996px). */
+@media (max-width: 1499px) {
+  .navbar__toggle {
+    display: inherit;
+  }
+
+  .navbar__items .navbar__item {
+    display: none;
+  }
+}
+
+/* At full width the row fits; navbar stays static + wrappable as a safety
+   net so a few extra pixels of font rendering can never clip the menu.
+   --ifm-navbar-height: 0 keeps the sticky doc sidebar/TOC offsets correct
+   for a non-sticky navbar. */
+@media (min-width: 1500px) {
+  :root {
+    --ifm-navbar-height: 0rem;
+  }
+
+  .navbar {
+    position: static;
+    height: auto;
+    min-height: 4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .navbar__inner {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+}
+
+/* GitHub / YouTube as compact icon links */
+.header-icon-link {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon-link::before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: block;
+  background-color: var(--pad-text-soft);
+  transition: background-color 0.2s;
+}
+
+.header-icon-link:hover::before {
+  background-color: var(--pad-ink);
+}
+
+.header-github-link::before {
+  mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>") no-repeat center / contain;
+}
+
+.header-youtube-link::before {
+  mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/></svg>") no-repeat center / contain;
+}
+
+/* In the hamburger menu these items render as rows — give the icon a label */
+@media (max-width: 1499px) {
+  .navbar-sidebar .header-icon-link::before {
+    margin-right: 0.6rem;
+  }
+
+  .navbar-sidebar .header-github-link::after {
+    content: 'GitHub';
+  }
+
+  .navbar-sidebar .header-youtube-link::after {
+    content: 'YouTube';
+  }
+}
+
+/* Category dropdowns (desktop) */
+.dropdown__menu {
+  background: var(--pad-card);
+  border: 1.5px solid var(--pad-rule);
+  border-radius: 6px;
+  box-shadow: var(--pad-shadow);
+  max-height: 70vh;
+  overflow-y: auto;
+  min-width: 15rem;
+}
+
+.dropdown__link {
+  font-size: 0.85rem;
+  color: var(--pad-text);
+  border-radius: 4px;
+}
+
+.dropdown__link:hover,
+.dropdown__link--active {
+  background: var(--pad-card-tint);
+  color: var(--pad-ink-strong);
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────── */
+.menu {
+  font-size: 0.88rem;
+  padding: 1rem 0.75rem !important;
+}
+
+.menu__list-item-collapsible > .menu__link--sublist {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pad-ink);
+  font-weight: 600;
+}
+
+.menu__link {
+  border-radius: 6px;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid var(--pad-ink);
+  border-radius: 0 6px 6px 0;
+  font-weight: 600;
+}
+
+/* ── Doc content: the worked sheet ───────────────────────────────────── */
+article {
+  background: var(--pad-card);
+  border: 1.5px solid var(--pad-rule);
+  border-radius: 6px;
+  box-shadow: var(--pad-shadow);
+  padding: 2rem 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme='dark'] article {
+  background: var(--pad-card);
+}
+
+article .markdown h1,
+article header h1 {
+  font-size: 2rem;
+  letter-spacing: -0.015em;
+  border-bottom: 2px solid var(--pad-ink);
+  padding-bottom: 0.6rem;
+}
+
+article .markdown h2 {
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+
+article .markdown h3 {
+  font-size: 1.15rem;
+}
+
+article .markdown li,
+article .markdown p {
+  line-height: 1.75;
+}
+
+article .markdown img {
+  max-width: 100%;
+  border: 1.5px solid var(--pad-rule);
+  border-radius: 6px;
+  box-shadow: var(--pad-shadow);
+  margin: 0.5em 0;
+}
+
+article .markdown table {
+  display: table;
+  width: 100%;
+  border: 1.5px solid var(--pad-rule);
+  border-radius: 6px;
+}
+
+article .markdown table thead th {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pad-ink);
+}
+
+/* Pagination + breadcrumbs pick up the mono voice */
+.pagination-nav__link {
+  background: var(--pad-card);
+  border: 1.5px solid var(--pad-rule);
+  border-radius: 6px;
+}
+
+.pagination-nav__sublabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pad-text-faint);
+}
+
+.breadcrumbs__link {
+  font-size: 0.8rem;
+}
+
+/* Table of contents */
+.table-of-contents {
+  font-size: 0.8rem;
+}
+
+.table-of-contents__link--active {
+  color: var(--pad-ink);
+  font-weight: 600;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+.footer {
+  border-top: 2px solid var(--pad-ink);
+}
+
+.footer__copyright a {
+  color: var(--ifm-footer-link-color);
+}
+
+.footer__copyright a:hover {
+  color: var(--ifm-footer-link-hover-color);
+}
+
+.footer__title {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+}
+
+.footer__link-item {
+  font-size: 0.86rem;
+}
+
+.footer__copyright {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+[data-theme='dark'] .footer {
+  border-top-color: rgba(95, 220, 143, 0.4);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+.button--primary {
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+}
+
+/* Mermaid diagrams sit on their own card */
+.docusaurus-mermaid-container {
+  background: var(--pad-card);
+  border: 1.5px dashed var(--pad-ink);
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 996px) {
+  article {
+    padding: 1.25rem 1.25rem;
+  }
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>05 Editorial Textbook — Doc page · CTA Exam Guide mockup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Source Serif 4', Georgia, serif; }
+    a { color: #1e3a5f; text-decoration: underline; } a:hover { color: #8c3b2e; }
+  </style>
+</head>
+<body>
+<div style="width: 1440px; height: 1120px; overflow: hidden; display: flex; flex-direction: column; background: #faf6ef; color: #1c1917;">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 64px; border-bottom: 1.5px solid #1c1917;">
+    <span style="font-family: 'Newsreader', Georgia, serif; font-size: 17px; font-weight: 600;">The Salesforce CTA Exam Guide</span>
+    <div style="display: flex; gap: 28px; font-family: system-ui, sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; color: #57534e;">
+      <span>CONTENTS</span><span>DIAGRAMS</span><span>SCENARIOS</span><span>SEARCH</span>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 300px minmax(0, 1fr) 250px; flex-grow: 1; overflow: hidden;">
+    <div style="border-right: 1px solid #d6cfc2; padding: 32px 28px; display: flex; flex-direction: column; gap: 6px; overflow: hidden;">
+      <span style="font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #8c3b2e; margin-bottom: 8px;">PART III — SECURITY</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #57534e;">Data Security</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #1c1917; font-weight: 600; border-bottom: 2px solid #8c3b2e; width: fit-content;">OAuth Flows &amp; IAM</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #57534e;">Cryptography</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #57534e;">Object, Field &amp; Record Security</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #57534e;">Session Settings</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15.5px; padding: 7px 0; color: #57534e;">Networking Basics</span>
+      <div style="border-top: 1px solid #d6cfc2; margin: 16px 0;"></div>
+      <span style="font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #78716c; margin-bottom: 4px;">OTHER PARTS</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">I. Exam Overview</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">II. System Architecture</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">IV. Data</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">V. Solution Architecture</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">VI. Integration</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">VII. Development Lifecycle &amp; Deployment</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 14.5px; padding: 5px 0; color: #57534e;">VIII. Communication</span>
+    </div>
+    <div style="padding: 48px 72px; display: flex; flex-direction: column; gap: 20px; overflow: hidden; max-width: 900px;">
+      <span style="font-family: system-ui, sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; color: #8c3b2e;">CHAPTER 8 · PART III — SECURITY</span>
+      <h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 44px; line-height: 1.08; font-weight: 500; letter-spacing: -0.01em;">OAuth Flows &amp; Identity and Access Management</h1>
+      <div style="border-top: 1px solid #d6cfc2; padding-top: 20px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.8; color: #292524;"><span style="font-family: 'Newsreader', Georgia, serif; font-size: 52px; line-height: 0.85; float: left; padding: 6px 10px 0 0; color: #8c3b2e;">I</span>dentity and Access Management comes up in virtually every CTA scenario. This chapter walks through the terms the judges expect you to know, the standards you will lean on, and every OAuth 2.0 flow you might be asked to justify on the board — with the trade-offs that make each one the right or wrong answer.</p>
+      </div>
+      <h2 style="margin: 14px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 27px; font-weight: 500;">What is IAM?</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.8; color: #44403c;">Identity and Access Management is the framework that verifies who a user is — authentication — and what they are permitted to do — authorization — across every system in your landscape, Salesforce included.</p>
+      <h2 style="margin: 14px 0 0; font-family: 'Newsreader', Georgia, serif; font-size: 27px; font-weight: 500;">Key IAM Terms</h2>
+      <div style="border-top: 1.5px solid #1c1917; border-bottom: 1.5px solid #1c1917;">
+        <div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); font-size: 15px; border-bottom: 1px solid #e7e0d3;">
+          <span style="padding: 13px 0; font-weight: 600;">Identity Provider (IdP)</span><span style="padding: 13px 0; color: #44403c; line-height: 1.6;">Stores identities and authenticates the user — Okta, Entra ID, or Salesforce itself.</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); font-size: 15px; border-bottom: 1px solid #e7e0d3;">
+          <span style="padding: 13px 0; font-weight: 600;">Service Provider (SP)</span><span style="padding: 13px 0; color: #44403c; line-height: 1.6;">The application the user wants to access; it trusts the IdP's word for who they are.</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); font-size: 15px;">
+          <span style="padding: 13px 0; font-weight: 600;">Principal</span><span style="padding: 13px 0; color: #44403c; line-height: 1.6;">The user or system whose identity is being verified.</span>
+        </div>
+      </div>
+      <div style="border-left: 3px solid #8c3b2e; background: #f4eee2; padding: 18px 24px; display: flex; flex-direction: column; gap: 6px;">
+        <span style="font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: #8c3b2e;">FIGURE 8.1</span>
+        <span style="font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 16px; color: #44403c;">The OAuth 2.0 Web Server Flow — authorization code exchange, step by step.</span>
+      </div>
+    </div>
+    <div style="padding: 52px 32px; border-left: 1px solid #d6cfc2; display: flex; flex-direction: column; gap: 12px; overflow: hidden;">
+      <span style="font-family: system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #78716c;">IN THIS CHAPTER</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #57534e;">What is IAM?</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #57534e;">Key elements of an IAM solution</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #1c1917; font-weight: 600;">Key IAM Terms</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #57534e;">Common IAM Standards</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #57534e;">Token Types</span>
+      <span style="font-family: 'Newsreader', Georgia, serif; font-size: 15px; color: #57534e;">OAuth 2.0 &amp; OpenID Connect Flows</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

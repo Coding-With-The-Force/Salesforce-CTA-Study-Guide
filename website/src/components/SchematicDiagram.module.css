@@ -1,0 +1,19 @@
+.node {
+  cursor: pointer;
+  outline: none;
+}
+
+.node rect {
+  transition: fill 0.15s ease, stroke-width 0.15s ease;
+}
+
+.node:hover rect,
+.node:focus-visible rect {
+  fill: var(--schematic-fill-hot);
+  stroke-width: 2.5px;
+}
+
+.node:hover text,
+.node:focus-visible text {
+  fill: var(--schematic-ink-strong);
+}
