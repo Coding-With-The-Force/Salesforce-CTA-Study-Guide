@@ -2,6 +2,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import redirects from './redirects';
+
 const config: Config = {
   title: 'The Salesforce CTA Exam Guide',
   tagline: 'The unofficial complete guide to the Salesforce CTA Review Board',
@@ -9,6 +11,10 @@ const config: Config = {
 
   url: 'https://the-salesforce-cta-exam-guide.com',
   baseUrl: '/',
+  // Directory-style URLs (/docs/foo/). GitHub Pages serves foo/index.html
+  // directly for these, avoiding a 301 hop, and it matches the trailing-slash
+  // style of the old mkdocs URLs our redirects catch.
+  trailingSlash: true,
 
   organizationName: 'Coding-With-The-Force',
   projectName: 'Salesforce-CTA-Study-Guide',
@@ -33,6 +39,15 @@ const config: Config = {
       href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap',
       type: 'text/css',
     },
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects,
+      },
+    ],
   ],
 
   themes: [
@@ -67,6 +82,8 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // Social share card (og:image / twitter:image)
+    image: 'img/social-card.png',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
